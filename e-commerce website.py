@@ -3,6 +3,7 @@ from bs4 import BeautifulSoup
 import pandas as pd
 
 # Demo e-commerce website for scraping practice
+def xyz()
 URL = "https://books.toscrape.com/"
 
 headers = {
