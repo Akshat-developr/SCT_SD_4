@@ -13,6 +13,7 @@ Features
 * Handles missing or unavailable product information gracefully
 * Uses HTML parsing for accurate data extraction
 * Simple and easy-to-understand Python implementation
+* Ai bot to help consumers 
 
 Technologies Used
 
