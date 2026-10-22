@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Books to Scrape — Product Extractor</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="page">
+    <header class="header">
+      <div class="book-icon" aria-hidden="true">▤</div>
+      <p class="eyebrow">WEB DATA EXTRACTOR</p>
+      <h1>Books to Scrape</h1>
+      <p class="subtitle">Collect titles, prices, and ratings from the demo catalog.</p>
+    </header>
+
+    <section class="card">
+      <div class="source">
+        <span class="status-dot"></span>
+        <span>Source</span>
+        <a href="https://books.toscrape.com/" target="_blank" rel="noreferrer">
+          books.toscrape.com
+        </a>
+      </div>
+
+      <div class="controls">
+        <button class="button primary" id="scrape-button" type="button">
+          ↻ &nbsp;Scrape products
+        </button>
+        <button class="button secondary" id="download-button" type="button" disabled>
+          ↓ &nbsp;Download CSV
+        </button>
+      </div>
+
+      <div class="status" id="status" role="status" aria-live="polite">
+        Ready to collect the first page of books.
+      </div>
+
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Product name</th>
+              <th>Price (£)</th>
+              <th>Rating</th>
+            </tr>
+          </thead>
+          <tbody id="products-body">
+            <tr class="empty">
+              <td colspan="3">Products will appear here after scraping.</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+
+      <p class="note">
+        The original Python script scrapes the first page (20 books) and exports those results.
+      </p>
+    </section>
+
+    <footer>CSV columns: Product Name, Price (£), Rating (1-5)</footer>
+  </main>
+</body>
+</html>
