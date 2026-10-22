@@ -1,57 +1,15 @@
-# E-commerce Product Web Scraper
+# Books to Scrape Product Extractor
 
-A Python-based web scraping application that extracts product information from an online e-commerce website and stores the collected data in a structured CSV file. The program automatically retrieves product details such as names, prices, and ratings, making it easy to analyze or organize product information.
+A browser-based version of the Python scraper. It fetches the first page of Books to Scrape, extracts product names, prices, and ratings, displays them in a table, and downloads the results as `products.csv`.
 
-This project was created for **SkillCraft Technology — Software Development Internship, Task 04**.
+## Files
 
-Features
+- `index.html` — page structure
+- `style.css` — styling
+- `script.js` — fetching, parsing, display, and CSV download
 
-* Scrapes product names from an e-commerce website
-* Extracts product prices and ratings
-* Collects data from multiple product listings
-* Stores the extracted data in a CSV file
-* Handles missing or unavailable product information gracefully
-* Uses HTML parsing for accurate data extraction
-* Simple and easy-to-understand Python implementation
-* Ai bot to help consumers 
+## Run locally
 
-Technologies Used
+Keep all three files in the same folder and open `index.html` in a browser. Select **Scrape products**, then **Download CSV**.
 
-* Python
-* Requests
-* BeautifulSoup (bs4)
-* Pandas
-* CSV
-
- How to Run
-
-1. Clone this repository.
-2. Open the project folder in VS Code.
-3. Install the required libraries:
-
-```bash
-pip install requests beautifulsoup4 pandas
-```
-
-4. Run the following command in the terminal:
-
-```bash
-python3 ecommerce_scraper.py
-```
- How It Works
-
-1. Enter the target e-commerce website URL (or use the predefined URL in the script).
-2. The program sends an HTTP request to the webpage.
-3. It extracts product names, prices, and ratings using BeautifulSoup.
-4. The collected data is organized into a structured format.
-5. The final dataset is saved as a CSV file for further analysis.
-
- Project Structure
-
-```text
-SCT_SD_4/
-├── ecommerce_scraper.py
-├── products.csv
-├── README.md
-└── .gitignore
-```
+Browsers may block requests to another website due to cross-origin rules. If that happens, use a local server-side proxy to fetch the page. Browser JavaScript also cannot set the Python script’s `User-Agent` header.
