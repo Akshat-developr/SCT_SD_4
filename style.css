@@ -1,0 +1,294 @@
+:root {
+  color-scheme: light;
+  --ink: #1b2c47;
+  --muted: #7a879a;
+  --blue: #3478e5;
+  --pale: #eef4fd;
+  --line: #e3eaf3;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  min-width: 320px;
+  min-height: 100vh;
+  margin: 0;
+  background: #f3f7fc;
+  color: var(--ink);
+  font-family: "Segoe UI", Arial, sans-serif;
+}
+
+.page {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 34px 16px 20px;
+}
+
+.header {
+  text-align: center;
+}
+
+.book-icon {
+  display: grid;
+  width: 44px;
+  height: 44px;
+  place-items: center;
+  margin: 0 auto 10px;
+  border: 1px solid #dce8fa;
+  border-radius: 14px;
+  background: #e7f0ff;
+  color: var(--blue);
+  font-size: 24px;
+}
+
+.eyebrow {
+  margin: 0 0 5px;
+  color: var(--blue);
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.15em;
+}
+
+h1 {
+  margin: 0;
+  font-size: clamp(25px, 6vw, 31px);
+  letter-spacing: -0.04em;
+}
+
+.subtitle {
+  margin: 7px 0 0;
+  color: var(--muted);
+  font-size: 13px;
+}
+
+.card {
+  width: min(100%, 760px);
+  margin: 22px 0 17px;
+  padding: 22px;
+  border: 1px solid #e0e7f0;
+  border-radius: 17px;
+  background: #fff;
+  box-shadow: 0 16px 42px rgba(35, 60, 94, 0.09);
+}
+
+.source {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  color: #65748a;
+  font-size: 12px;
+}
+
+.source a {
+  color: var(--blue);
+  font-weight: 600;
+  text-decoration: none;
+}
+
+.source a:hover {
+  text-decoration: underline;
+}
+
+.status-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  background: #4caf77;
+  box-shadow: 0 0 0 3px #eaf7ef;
+}
+
+.controls {
+  display: flex;
+  gap: 10px;
+  margin-top: 16px;
+}
+
+.button {
+  min-height: 41px;
+  padding: 0 15px;
+  border: 0;
+  border-radius: 9px;
+  cursor: pointer;
+  font: 700 12px "Segoe UI", Arial, sans-serif;
+  transition: background 0.15s, transform 0.12s, box-shadow 0.15s;
+}
+
+.button:active {
+  transform: translateY(1px);
+}
+
+.button:focus-visible {
+  outline: 3px solid rgba(52, 120, 229, 0.25);
+  outline-offset: 2px;
+}
+
+.primary {
+  background: var(--blue);
+  color: white;
+  box-shadow: 0 4px 11px rgba(52, 120, 229, 0.2);
+}
+
+.primary:hover {
+  background: #2869d1;
+}
+
+.secondary {
+  background: #edf2f8;
+  color: #50627b;
+}
+
+.secondary:hover:not(:disabled) {
+  background: #e1e9f3;
+}
+
+.button:disabled {
+  opacity: 0.48;
+  cursor: not-allowed;
+}
+
+.status {
+  min-height: 39px;
+  display: flex;
+  align-items: center;
+  margin-top: 13px;
+  padding: 8px 11px;
+  border-radius: 8px;
+  background: #f4f7fb;
+  color: #697a91;
+  font-size: 12px;
+  line-height: 1.4;
+}
+
+.status[data-state="error"] {
+  background: #fff1f1;
+  color: #b83e3e;
+}
+
+.status[data-state="success"] {
+  background: #eff9f2;
+  color: #2b7948;
+}
+
+.table-wrap {
+  margin-top: 13px;
+  overflow-x: auto;
+  border: 1px solid var(--line);
+  border-radius: 9px;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+}
+
+thead {
+  background: #f6f8fc;
+}
+
+th,
+td {
+  padding: 11px 12px;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+
+th {
+  color: #697990;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: 0.06em;
+  text-transform: uppercase;
+}
+
+td:first-child {
+  min-width: 230px;
+  color: #2d405d;
+  font-weight: 600;
+}
+
+td:nth-child(2),
+td:nth-child(3) {
+  white-space: nowrap;
+}
+
+tbody tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover:not(.empty) {
+  background: #f8fbff;
+}
+
+.rating {
+  color: #d28b19;
+  letter-spacing: 1px;
+}
+
+.rating-number {
+  margin-left: 5px;
+  color: #65748a;
+  font-size: 11px;
+  letter-spacing: 0;
+}
+
+.empty td {
+  padding: 23px 12px;
+  color: #97a3b3;
+  font-weight: 400;
+  text-align: center;
+}
+
+.note {
+  margin: 11px 0 0;
+  color: #929eae;
+  font-size: 10px;
+  line-height: 1.5;
+}
+
+footer {
+  margin-top: auto;
+  padding-top: 4px;
+  color: #98a4b4;
+  font-size: 10px;
+  text-align: center;
+}
+
+@media (max-width: 500px) {
+  .page {
+    padding-top: 24px;
+  }
+
+  .card {
+    padding: 16px 13px;
+  }
+
+  .controls {
+    flex-direction: column;
+  }
+
+  .button {
+    width: 100%;
+  }
+
+  th,
+  td {
+    padding: 10px 8px;
+  }
+
+  td:first-child {
+    min-width: 185px;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+  }
+}
